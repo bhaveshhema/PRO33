@@ -1,9 +1,10 @@
-var Engine = Matter.Engine,
-  World = Matter.World,
-  Events = Matter.Events,
-  Bodies = Matter.Bodies;
+const Engine = Matter.Engine;
+const World = Matter.World;
+const  Events = Matter.Events;
+const  Bodies = Matter.Bodies;
 var snow = [];
-
+var engine;
+var world;
 function preload () {
   bg = loadImage("snow1.jpg");
 }
@@ -18,7 +19,7 @@ function draw() {
   background(bg);
   Engine.update(engine);
   if (frameCount % 60 === 0){
-    snow.push(new Snow(random(0,800),0))
+    snow.push(new Snow(random(50,750),10))
   }
 
   for (var k = 0; k < snow.length; k++) {
